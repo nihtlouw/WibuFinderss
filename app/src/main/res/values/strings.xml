@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">WibuFinders</string>
+    <string name="app_name_capital">Wibu Finders</string>
+    <string name="login">Login</string>
+    <string name="email_hint">Input your account email</string>
+    <string name="password">Password</string>
+    <string name="password_hint">Input valid password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="or">Or</string>
+    <string name="register">Register</string>
+    <string name="need_an_account">Need an account?</string>
+    <string name="email">Email</string>
+    <string name="Email_user">User12345678@gmail.com</string>
+    <string name="change_them">Change Theme Dark/White</string>
+    <string name="change_lang">Change language</string>
+    <string name="favorite">Favorite</string>
+    <string name="log_out">Log out</string>
+    <string name="username">Username</string>
+    <string name="username_hint">User Puitika</string>
+    <string name="password_register_hint">Input your password</string>
+    <string name="password_again_register_hint">Input your password again</string>
+    <string name="back">Back</string>
+    <string name="confirm">Confirm</string>
+    <string name="setting">Settings</string>
+    <string name="hint_day">00</string>
+    <string name="hint_month">January</string>
+    <string name="hint_year">0000</string>
+    <string name="edit_username">edit_username</string>
+    <string name="yes">confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="namakain_daerah">Sulawesi Selatan</string>
+    <string name="desc_kaindaerah">Description</string>
+    <string name="isi_kaindaerah">Motif ini biasanya berupa gari-garis dengan bentuk-bentuk pada seluruh bagian kain dengan warna yang berbeda.\u00e2\u0080\u00a8\u00e2\u0080\u00a8Motif kain khas Toraja ini mengandung makna yang cukup dalam, yakni:\nNilai sopan santun\nSaling berjalan sepadan\nMenghargai satu sama lain\nKehidupan Toraja\n\n Read more...\n\n</string>
+    <string name="locate_kaindaerah">Location</string>
+    <string name="button_gallery">Gallery</string>
+    <string name="button_camera">Camera</string>
+    <string name="pilih_sumber_gambar">Scan your cloth</string>
+    <string name="event_image_description">event image desc</string>
+    <string name="confirm_ask">Are you sure ?</string>
+    <string name="confirm_desc">We will inform your event if its fullfill \nrequirements at the notification</string>
+    <string name="button_Noconfirm">No</string>
+    <string name="button_Yesconfirm">Yes</string>
+    <string name="loggedin">You are logged in</string>
+    <string name="username_login_hint">Input valid username</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

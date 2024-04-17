@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "781388388669",
+    "project_id": "wibufinders",
+    "storage_bucket": "wibufinders.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781388388669:android:47a2c503bfcbf1afb64d54",
+        "android_client_info": {
+          "package_name": "com.manpro.wibufinders"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBinpuSgRDzrvdB7NY7sj_RLIpJZoF4oRE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

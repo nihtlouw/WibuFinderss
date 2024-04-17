@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- layout fragment_popup.xml -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#80000000"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_form_confirm"
+        android:padding="16dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/tv_askconfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/black"
+            android:text="@string/confirm_ask"
+            android:textStyle="bold"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tv_askdesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#CB000000"
+            android:textAlignment="center"
+            android:text="@string/confirm_desc"
+            android:textStyle="italic"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="-12dp">
+
+            <Button
+                android:id="@+id/button_noconfirm"
+                android:textSize="18sp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="@color/brandy"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/button_Noconfirm" />
+
+            <Button
+                android:id="@+id/button_yesconfirm"
+                android:textSize="18sp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/brandy"
+                android:textStyle="bold"
+                android:text="@string/button_Yesconfirm" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal|bottom">
+        </FrameLayout>
+
+    </LinearLayout>
+</RelativeLayout>

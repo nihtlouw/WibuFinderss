@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Background Circle -->
+    <path
+        android:fillColor="@color/brandy"
+    android:pathData="M24,2C12.27,2 2,12.27 2,24s10.27,22 22,22 22,-10.27 22,-22S35.73,2 24,2z"/>
+</vector>

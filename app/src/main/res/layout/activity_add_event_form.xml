@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brandy"
+    tools:context=".ui.main.event.AddEventFormActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rectangle_green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_form_event"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:paddingTop="10dp"
+        android:paddingHorizontal="5dp">
+
+        <TextView
+            android:id="@+id/tv_formevent"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="70dp"
+            android:text="Form Event"
+            android:textSize="25dp"
+            android:textColor="@color/white_smoke"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="1100dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_formevent">
+
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:id="@+id/circularRevealCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:backgroundTint="@color/grey"
+                app:cardCornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1100dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_eventname"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="30dp"
+                        android:textColor="@color/dark_blue_green"
+                        android:text="Nama event"
+                        android:textSize="18dp"
+                        android:textStyle="italic"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </TextView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@id/cardview_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="25dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_marginTop="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/dark_blue_green"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_eventname">
+
+                        <EditText
+                            android:id="@+id/et_eventname"
+                            android:textColor="@android:color/black"
+                            style="@style/TextAppearance.Material3.BodyMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:padding="8dp"
+                            android:textSize="16dp"
+                            android:hint="Masukan nama event"
+                            android:paddingHorizontal="5dp"
+                            android:textAlignment="textStart"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:background="#D8DDDDDD"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_namaevent">
+
+                        </EditText>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/tv_eventdateday"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_marginHorizontal="30dp"
+                            android:textColor="@color/dark_blue_green"
+                            android:text="Waktu hari/tgl"
+                            android:hint="set dengan calender"
+                            android:textSize="18dp"
+                            android:textStyle="italic"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardview_1">
+
+                        </TextView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@id/cardview_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="90dp"
+                        android:layout_marginStart="25dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_marginTop="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/dark_blue_green"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_eventdateday">
+
+                        <EditText
+                            android:id="@+id/et_dateday"
+                            android:textColor="@android:color/black"
+                            style="@style/TextAppearance.Material3.BodyMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:padding="8dp"
+                            android:hint="Hari, DD MM YYYY"
+                            android:textSize="16dp"
+                            android:paddingHorizontal="5dp"
+                            android:textAlignment="textStart"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:background="#D8DDDDDD"
+                            app:layout_constraintTop_toBottomOf="@+id/cardview_2">
+
+                        </EditText>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <ImageView
+                        android:id="@+id/iv_calender"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/cardview_2"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_eventdateday"
+                        android:src="@drawable/ic_calender"/>
+
+                    <TextView
+                        android:id="@+id/tv_eventdesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="30dp"
+                        android:textColor="@color/dark_blue_green"
+                        android:text="Description"
+                        android:textSize="18dp"
+                        android:textStyle="italic"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardview_2">
+
+                    </TextView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@id/cardview_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginHorizontal="25dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_marginTop="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/dark_blue_green"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_eventdesc">
+
+                        <EditText
+                            android:id="@+id/et_descevent"
+                            android:textColor="@android:color/black"
+                            style="@style/TextAppearance.Material3.BodyMedium"
+                            android:layout_width="match_parent"
+                            android:padding="8dp"
+                            android:layout_height="80dp"
+                            android:textSize="16dp"
+                            android:hint="Masukan deskripsi event"
+                            android:paddingHorizontal="5dp"
+                            android:gravity="top|start"
+                            android:textAlignment="textStart"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:background="#D8DDDDDD"
+                            app:layout_constraintTop_toBottomOf="@+id/cardview_3">
+
+                        </EditText>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_jenisevent"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="30dp"
+                        android:textColor="@color/dark_blue_green"
+                        android:text="Jenis event"
+                        android:textSize="18dp"
+                        android:textStyle="italic"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardview_3">
+
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_jenisevent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/rb_opened"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="50dp"/>
+
+                        <TextView
+                            android:id="@+id/tv_open"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Terbuka"
+                            android:layout_marginStart="20dp"
+                            android:textColor="@color/dark_blue_green"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_closed"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="20dp"/>
+
+                        <TextView
+                            android:id="@+id/tv_closed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tertutup"
+                            android:layout_marginStart="20dp"
+                            android:textColor="@color/dark_blue_green"/>
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/tv_ticketprice"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="30dp"
+                        android:textColor="@color/dark_blue_green"
+                        android:text="Harga tiket"
+                        android:textSize="18dp"
+                        android:textStyle="italic"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+
+                    </TextView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@id/cardview_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="25dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_marginTop="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/dark_blue_green"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_ticketprice">
+
+                        <EditText
+                            android:id="@+id/et_ticketprice"
+                            android:textColor="@android:color/black"
+                            style="@style/TextAppearance.Material3.BodyMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:textSize="16dp"
+                            android:hint="Rp."
+                            android:padding="8dp"
+                            android:inputType="number"
+                            android:paddingHorizontal="5dp"
+                            android:textAlignment="textStart"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:background="#D8DDDDDD"
+                            app:layout_constraintTop_toBottomOf="@+id/cardview_4">
+
+                        </EditText>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_contactperson"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="30dp"
+                        android:textColor="@color/dark_blue_green"
+                        android:text="Contact person"
+                        android:textSize="18dp"
+                        android:textStyle="italic"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardview_4">
+
+                    </TextView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@id/cardview_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="25dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_marginTop="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/dark_blue_green"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_contactperson">
+
+                        <EditText
+                            android:id="@+id/et_contactperson"
+                            android:textColor="@android:color/black"
+                            style="@style/TextAppearance.Material3.BodyMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:padding="8dp"
+                            android:textSize="16dp"
+                            android:inputType="number"
+                            android:hint="08xxxxxxxxxx"
+                            android:paddingHorizontal="5dp"
+                            android:textAlignment="textStart"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:background="#D8DDDDDD"
+                            app:layout_constraintTop_toBottomOf="@+id/cardview_5">
+
+                        </EditText>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_organizer"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="30dp"
+                        android:textColor="@color/dark_blue_green"
+                        android:text="Penyelenggara"
+                        android:textSize="18dp"
+                        android:textStyle="italic"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardview_5">
+
+                    </TextView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@id/cardview_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="25dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_marginTop="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/dark_blue_green"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_organizer">
+
+                        <EditText
+                            android:id="@+id/et_organizer"
+                            android:textColor="@android:color/black"
+                            style="@style/TextAppearance.Material3.BodyMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:textSize="16dp"
+                            android:padding="8dp"
+                            android:hint="Nama/komunitas/company etc"
+                            android:paddingHorizontal="5dp"
+                            android:textAlignment="textStart"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:background="#D8DDDDDD"
+                            app:layout_constraintTop_toBottomOf="@+id/cardview_6">
+
+                        </EditText>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_eventlocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="30dp"
+                        android:textColor="@color/dark_blue_green"
+                        android:text="Lokasi Acara"
+                        android:textSize="18dp"
+                        android:textStyle="italic"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardview_6">
+
+                    </TextView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@id/cardview_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="25dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_marginTop="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/dark_blue_green"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_eventlocation">
+
+                        <EditText
+                            android:id="@+id/et_eventlocation"
+                            android:textColor="@android:color/black"
+                            style="@style/TextAppearance.Material3.BodyMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:textSize="16dp"
+                            android:hint="ex:Jakarta Jl tanah abang "
+                            android:paddingHorizontal="5dp"
+                            android:padding="8dp"
+                            android:textAlignment="textStart"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:background="#D8DDDDDD"
+                            app:layout_constraintTop_toBottomOf="@+id/cardview_7">
+
+                        </EditText>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_eventtime"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="30dp"
+                        android:textColor="@color/dark_blue_green"
+                        android:text="Mulai Pukul"
+                        android:textSize="18dp"
+                        android:textStyle="italic"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardview_7">
+
+                    </TextView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@id/cardview_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="25dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_marginTop="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/dark_blue_green"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginEnd="200dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_eventtime">
+
+                        <EditText
+                            android:id="@+id/et_eventtime_start"
+                            android:textColor="@android:color/black"
+                            style="@style/TextAppearance.Material3.BodyMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:textSize="16dp"
+                            android:hint="00.00"
+                            android:paddingHorizontal="5dp"
+                            android:textAlignment="center"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:background="#D8DDDDDD"
+                            app:layout_constraintTop_toBottomOf="@+id/cardview_8">
+
+                        </EditText>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@id/cardview_9"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="25dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_marginTop="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/dark_blue_green"
+                        android:layout_marginStart="200dp"
+                        android:layout_marginEnd="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_eventtime">
+
+                        <EditText
+                            android:id="@+id/et_eventtime_end"
+                            android:textColor="@android:color/black"
+                            style="@style/TextAppearance.Material3.BodyMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:textSize="16dp"
+                            android:hint="00.00"
+                            android:paddingHorizontal="5dp"
+                            android:textAlignment="center"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:background="#D8DDDDDD"
+                            app:layout_constraintTop_toBottomOf="@+id/cardview_9">
+
+                        </EditText>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <EditText
+                        android:id="@+id/et_strip"
+                        android:textColor="@android:color/black"
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:textSize="16dp"
+                        android:hint="--"
+                        android:paddingHorizontal="5dp"
+                        android:textAlignment="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:background="@color/grey"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_eventtime">
+
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/tv_addbanner"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_marginHorizontal="30dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/dark_blue_green"
+                        android:text="Add Banner Event"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardview_8">
+
+                    </TextView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@id/cardview_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_marginHorizontal="35dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_marginTop="2dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/dark_blue_green"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_addbanner">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="130dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:background="#D8DDDDDD"
+                            app:layout_constraintTop_toBottomOf="@+id/cardview_10">
+                        </ImageView>
+
+                        <ImageView
+                            android:id="@+id/iv_bannerimage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_add"
+                            android:scaleType="fitCenter"
+                            app:layout_constraintBottom_toBottomOf="@id/cardview_10"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/cardview_10">
+
+                        </ImageView>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_back"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="210dp"
+                        android:paddingHorizontal="7dp"
+                        android:text="Back"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_confirm"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardview_10"></com.google.android.material.button.MaterialButton>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_confirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="210dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="25dp"
+                        android:paddingHorizontal="7dp"
+                        android:text="Confirm"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardview_10"></com.google.android.material.button.MaterialButton>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</ScrollView>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brandy"
+    tools:context=".ui.main.register.RegisterActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:elevation="20dp"
+        android:paddingHorizontal="10dp"
+        android:shadowColor="@color/shadow_color"
+        android:shadowDx="2"
+        android:shadowDy="5"
+        android:shadowRadius="7"
+        android:text="@string/register"
+        android:textColor="@color/soft_peach"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationZ="100dp"
+        app:cardBackgroundColor="@color/brandy"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:strokeColor="@color/dark_blue_green"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_username"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="3dp"
+                android:text="@string/username"
+                android:textFontWeight="900"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/et_username"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_username"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-11dp"
+                android:drawableEnd="@drawable/person_black_ic"
+                android:hint="@string/username_hint"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:textCursorDrawable="@color/dark_blue_green"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingStart="3dp"
+                android:text="@string/email"
+                android:textFontWeight="900"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/et_email"
+                app:layout_constraintTop_toBottomOf="@+id/et_username" />
+
+            <EditText
+                android:id="@+id/et_email"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-11dp"
+                android:drawableEnd="@drawable/mail_ic"
+                android:hint="@string/email_hint"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:textCursorDrawable="@color/dark_blue_green"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+
+            <TextView
+                android:id="@+id/tv_password"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingStart="3dp"
+                android:text="@string/password"
+                android:textFontWeight="900"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/et_password"
+                app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-11dp"
+                android:drawableEnd="@drawable/password_ic"
+                android:hint="@string/password_register_hint"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:textCursorDrawable="@color/dark_blue_green"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_password" />
+
+            <TextView
+                android:id="@+id/tv_re_password"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingStart="3dp"
+                android:text="Repeat Password"
+                android:textFontWeight="900"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/et_re_password"
+                app:layout_constraintTop_toBottomOf="@+id/et_password" />
+
+            <EditText
+                android:id="@+id/et_re_password"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-11dp"
+                android:drawableEnd="@drawable/password_ic"
+                android:hint="@string/password_again_register_hint"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:textCursorDrawable="@color/dark_blue_green"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_re_password" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@drawable/bottom_shape_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_back"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:elevation="10dp"
+        android:text="@string/back"
+        android:textColor="@color/soft_peach"
+        android:textFontWeight="900"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_confirm"
+        app:layout_constraintStart_toEndOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3" />
+
+    <Button
+        android:id="@+id/btn_confirm"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:elevation="10dp"
+        android:text="@string/confirm"
+        android:textColor="@color/soft_peach"
+        android:textFontWeight="900"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/view3"
+        app:layout_constraintStart_toEndOf="@+id/btn_back"
+        app:layout_constraintTop_toTopOf="@+id/view3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
