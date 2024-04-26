@@ -13,7 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_event"
-        app:title="Puitika Warna"
+        app:title="Social Wibu news"
         app:titleTextAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
         app:titleTextColor="@color/white" />
 
@@ -44,9 +44,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include layout="@layout/shimmer_event"/>
-            <include layout="@layout/shimmer_event"/>
-            <include layout="@layout/shimmer_event"/>
+            <include layout="@layout/shimmer_socialevent"/>
+            <include layout="@layout/shimmer_socialevent"/>
+            <include layout="@layout/shimmer_socialevent"/>
 
         </LinearLayout>
 

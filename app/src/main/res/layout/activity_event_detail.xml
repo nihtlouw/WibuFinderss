@@ -19,11 +19,12 @@
             android:layout_height="270dp"
             android:elevation="10dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/banner_tenun"
+            android:src="@drawable/event4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MyApp.BottomRoundedCorners" />
+            app:layout_constraintTop_toTopOf="parent">
+
+        </com.google.android.material.imageview.ShapeableImageView>
 
 
         <androidx.cardview.widget.CardView
@@ -56,7 +57,7 @@
                     android:shadowDx="5"
                     android:shadowDy="5"
                     android:shadowRadius="10"
-                    android:text="BATIK BORDIR TENUN DAN CRAFT"
+                    android:text="KOINICHIRU FEST"
                     android:textAlignment="center"
                     android:textColor="@color/dark_blue_green"
                     android:textSize="18sp"
@@ -74,78 +75,10 @@
                     app:layout_constraintTop_toBottomOf="@id/tv_eventname">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/const1"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center">
-
-                        <ImageView
-                            android:id="@+id/iv_imageclock"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="8dp"
-                            android:src="@drawable/ic_clock"
-                            android:textStyle="italic"
-                            app:layout_constraintEnd_toStartOf="@+id/tv_eventtimestart"
-                            app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintHorizontal_chainStyle="spread"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:id="@+id/tv_eventtimestart"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:padding="1dp"
-                            android:shadowColor="#32000000"
-                            android:shadowDx="5"
-                            android:shadowDy="5"
-                            android:shadowRadius="10"
-                            android:text="08.00 am"
-                            android:textColor="@color/dark_blue_green"
-                            android:textSize="17sp"
-                            android:textStyle="italic"
-                            app:layout_constraintStart_toEndOf="@+id/iv_imageclock"
-                            app:layout_constraintTop_toTopOf="@+id/iv_imageclock" />
-
-                        <TextView
-                            android:id="@+id/tv_strip"
-                            android:layout_width="10dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
-                            android:padding="1dp"
-                            android:shadowColor="#32000000"
-                            android:shadowDx="5"
-                            android:shadowDy="5"
-                            android:shadowRadius="10"
-                            android:text="-"
-                            android:textAlignment="center"
-                            android:textColor="@color/dark_blue_green"
-                            android:textSize="17sp"
-                            android:textStyle="italic"
-                            app:layout_constraintEnd_toStartOf="@+id/tv_eventtimeend"
-                            app:layout_constraintStart_toEndOf="@+id/tv_eventtimestart"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:id="@+id/tv_eventtimeend"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="10dp"
-                            android:padding="1dp"
-                            android:shadowColor="#32000000"
-                            android:shadowDx="5"
-                            android:shadowDy="5"
-                            android:shadowRadius="10"
-                            android:text="13.00 pm"
-                            android:textAlignment="center"
-                            android:textColor="@color/dark_blue_green"
-                            android:textSize="17sp"
-                            android:textStyle="italic"
-                            app:layout_constraintStart_toEndOf="@+id/tv_strip"
-                            app:layout_constraintTop_toTopOf="parent" />
-
 
                         <!-- Baris Kedua -->
                         <ImageView
@@ -153,11 +86,10 @@
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:layout_marginStart="10dp"
-                            android:layout_marginTop="11dp"
                             android:src="@drawable/ic_calenders"
                             android:textStyle="italic"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_eventtimeend" />
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/tv_eventdate"
@@ -167,12 +99,13 @@
                             android:shadowColor="#32000000"
                             android:shadowDx="5"
                             android:shadowDy="5"
+                            android:layout_marginStart="30dp"
                             android:shadowRadius="10"
-                            android:text="Senin, 12 September 2023"
+                            android:text="27 April 2024"
                             android:textColor="@color/dark_blue_green"
                             android:textSize="17sp"
                             android:textStyle="italic"
-                            app:layout_constraintStart_toStartOf="@+id/tv_eventtimestart"
+                            app:layout_constraintStart_toStartOf="@+id/iv_imagecalender"
                             app:layout_constraintTop_toTopOf="@+id/iv_imagecalender" />
 
                         <!-- Baris Ketiga -->
@@ -196,7 +129,7 @@
                             android:shadowDx="5"
                             android:shadowDy="5"
                             android:shadowRadius="10"
-                            android:text="Jl Aceh No 66 kota bandung"
+                            android:text="Jakarta Selatan	"
                             android:textColor="@color/dark_blue_green"
                             android:textSize="17sp"
                             android:textStyle="italic"
@@ -270,7 +203,7 @@
                         android:shadowDx="5"
                         android:shadowDy="5"
                         android:shadowRadius="20"
-                        android:text="aku adalah anak gembala , selalu senang serta gembira , karena aku anak paman kuda auuu ashiap santuy apalah aku capek ingin tidur 24 jam dimas anjay mabar valorant kita gaskuy "
+                        android:text="@string/desc_eventwibu"
                         android:textAlignment="textStart"
                         android:textSize="18dp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -281,7 +214,7 @@
                     </TextView>
 
                     <TextView
-                        android:id="@+id/tv_harga_tiket"
+                        android:id="@+id/tv_eventlocation"
                         style="@style/TextAppearance.Material3.BodyMedium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -292,7 +225,7 @@
                         android:shadowDx="5"
                         android:shadowDy="5"
                         android:shadowRadius="15"
-                        android:text="Harga Tiket"
+                        android:text="Location"
                         android:textAlignment="textStart"
                         android:textColor="@color/dark_blue_green"
                         android:textSize="19dp"
@@ -301,24 +234,32 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_detail_event" />
 
-                    <TextView
-                        android:id="@+id/tv_harga_tiket_detail"
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/gmap_mapsevent"
                         style="@style/TextAppearance.Material3.BodyMedium"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="150dp"
                         android:layout_marginHorizontal="30dp"
                         android:layout_marginTop="8dp"
                         android:elevation="20dp"
+                        app:cardCornerRadius="20dp"
                         android:shadowColor="#40000000"
                         android:shadowDx="5"
                         android:shadowDy="5"
                         android:shadowRadius="20"
-                        android:text="Rp 50.000,-"
                         android:textAlignment="textStart"
                         android:textSize="18dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_harga_tiket" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_eventlocation" >
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/eventmaps">
+
+                        </ImageView>
+                    </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:id="@+id/tv_contact_person"
@@ -332,14 +273,14 @@
                         android:shadowDx="5"
                         android:shadowDy="5"
                         android:shadowRadius="15"
-                        android:text="Contact Person"
+                        android:text="More Info"
                         android:textAlignment="textStart"
                         android:textColor="@color/dark_blue_green"
                         android:textSize="19dp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_harga_tiket_detail" />
+                        app:layout_constraintTop_toBottomOf="@+id/gmap_mapsevent" />
 
                     <TextView
                         android:id="@+id/tv_contact_person_detail"
@@ -355,7 +296,8 @@
                         android:shadowDx="5"
                         android:shadowDy="5"
                         android:shadowRadius="20"
-                        android:text="John Doe\nEmail: john.doe@example.com\nPhone: 123-456-7890"
+                        android:text="Email   : johnysiwibu@gmail.com\nPhone   : 123-456-7890\nWebsite   : https://www.google.com/url?q=https://www.facebook.com/groups/251875943835/permalink/10162381333473836/"
+                        android:autoLink="web"
                         android:textAlignment="textStart"
                         android:textSize="18dp"
                         app:layout_constraintEnd_toEndOf="parent"

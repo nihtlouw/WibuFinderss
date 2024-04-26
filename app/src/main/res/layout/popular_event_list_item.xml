@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.circularreveal.cardview.CircularRevealCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/carousel_item_container1"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:layout_columnWeight="1"
+    android:layout_margin="4dp"
+    android:backgroundTint="@color/shimmer"
+    android:elevation="50dp"
+    app:cardCornerRadius="20dp"
+    android:foreground="?attr/selectableItemBackground"
+    app:shapeAppearance="?attr/shapeAppearanceCornerExtraLarge">
+
+    <ImageView
+        android:id="@+id/iv_cloth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:transitionName="image" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Add a black gradient at the bottom -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/black_gradient"
+            android:rotation="180" />
+
+
+        <!-- Add a TextView for the text overlay -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/iv_hsr">
+
+        </ImageView>
+
+        <View
+            android:id="@+id/coverwhite"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/cover"
+            android:rotation="180" />
+
+        <TextView
+            android:id="@+id/date_eventpopular"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="130dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:elevation="10dp"
+            android:text=" 25 March , Thursday "
+            android:textColor="#03C5B8"
+            android:textSize="11dp"
+            android:textStyle="italic"
+            tools:ignore="TextSizeCheck">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/title_eventpopular"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:elevation="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:textColor="@color/burnham"
+            android:text="# Star Rail Hoyolab Asia Festival 2024 "
+            android:layout_marginVertical="142dp"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_marginHorizontal="20dp">
+
+        </TextView>
+
+
+
+    </RelativeLayout>
+</com.google.android.material.circularreveal.cardview.CircularRevealCardView>

@@ -4,9 +4,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.manpro.wibufinders.repository.PuitikaRepository
 
-class LoginViewModel(repository: PuitikaRepository) : ViewModel() {
+class LoginViewModel : ViewModel() {
 
     private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
 

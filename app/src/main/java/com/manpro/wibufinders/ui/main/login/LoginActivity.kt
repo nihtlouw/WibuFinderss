@@ -9,6 +9,8 @@
     import android.widget.Toast
     import androidx.lifecycle.ViewModelProvider
     import com.google.firebase.auth.FirebaseAuth
+    import com.google.firebase.database.DatabaseReference
+    import com.google.firebase.database.FirebaseDatabase
     import com.manpro.wibufinders.R
     import com.manpro.wibufinders.ui.main.main.MainActivity
     import com.manpro.wibufinders.ui.main.register.RegisterActivity
@@ -22,11 +24,11 @@
         private lateinit var loginButton: Button
         private lateinit var registerTextView: TextView
         private lateinit var mAuth: FirebaseAuth
+        private lateinit var databaseReference: DatabaseReference
 
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_login)
-
             mAuth = FirebaseAuth.getInstance()
             viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
 
@@ -34,6 +36,8 @@
             passwordEditText = findViewById(R.id.et_password)
             loginButton = findViewById(R.id.btn_login)
             registerTextView = findViewById(R.id.tv_register)
+            databaseReference = FirebaseDatabase.getInstance().reference.child("users")
+
 
             loginButton.setOnClickListener {
                 loginUser()
