@@ -1,37 +1,42 @@
 package com.manpro.wibufinders.ui.main.eventdetail
 
-import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.manpro.wibufinders.DummyFiles.SocialEventList
 import com.manpro.wibufinders.databinding.FragmentSocialeventBinding
 
-
 class SocialEventFragment : Fragment() {
-
-    private lateinit var binding: FragmentSocialeventBinding
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var eventAdapter: EventAdapter
-    private val handler = Handler()
+    private var _binding: FragmentSocialeventBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var socialEventAdapter: SocialEventAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentSocialeventBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    ): View {
+        _binding = FragmentSocialeventBinding.inflate(inflater, container, false)
+        val root: View = binding.root
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        // Inisialisasi RecyclerView
+        val recyclerView: RecyclerView = binding.recyclerivewevents
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+        // Inisialisasi adapter dengan data dari SocialEventList
+        socialEventAdapter = SocialEventAdapter(SocialEventList.data)
+        recyclerView.adapter = socialEventAdapter
+
+        return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        handler.removeCallbacksAndMessages(null)
+        _binding = null
     }
 }
+

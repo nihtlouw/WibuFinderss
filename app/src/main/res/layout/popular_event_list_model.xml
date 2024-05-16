@@ -8,41 +8,24 @@
     android:layout_height="170dp"
     android:layout_columnWeight="1"
     android:layout_margin="4dp"
-    android:backgroundTint="@color/shimmer"
     android:elevation="50dp"
     app:cardCornerRadius="20dp"
-    android:foreground="?attr/selectableItemBackground"
+    android:background="#00000000"
+    android:foreground="#00000000"
     app:shapeAppearance="?attr/shapeAppearanceCornerExtraLarge">
 
     <ImageView
-        android:id="@+id/iv_cloth"
+        android:id="@+id/iv_eventpops"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
-        android:adjustViewBounds="true"
-        android:transitionName="image" />
+        android:src="@drawable/iv_hsr">
+
+    </ImageView>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <!-- Add a black gradient at the bottom -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/black_gradient"
-            android:rotation="180" />
-
-
-        <!-- Add a TextView for the text overlay -->
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:src="@drawable/iv_hsr">
-
-        </ImageView>
 
         <View
             android:id="@+id/coverwhite"
@@ -53,7 +36,7 @@
             android:rotation="180" />
 
         <TextView
-            android:id="@+id/date_eventpopular"
+            android:id="@+id/tv_date_eventpopular"
             style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -73,17 +56,35 @@
         </TextView>
 
         <TextView
-            android:id="@+id/title_eventpopular"
+            android:id="@+id/tv_hstg"
             android:layout_width="match_parent"
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:elevation="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:textSize="17dp"
+            android:textSize="18dp"
             android:textStyle="bold"
             android:textColor="@color/burnham"
-            android:text="# Star Rail Hoyolab Asia Festival 2024 "
+            android:text="#"
+            android:layout_marginVertical="142dp"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_marginHorizontal="20dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_title_eventpopular"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:elevation="10dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/burnham"
+            android:text="Star Rail Hoyolab Asia Festival 2024 "
             android:layout_marginVertical="142dp"
             style="@style/TextAppearance.AppCompat.Body2"
             android:layout_marginHorizontal="20dp">

@@ -14,11 +14,11 @@
         tools:context=".ui.main.event.EventDetailActivity">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/zoomableImageView"
+            android:id="@+id/iv_eventimage"
             android:layout_width="match_parent"
             android:layout_height="270dp"
             android:elevation="10dp"
-            android:scaleType="centerCrop"
+            android:scaleType="fitXY"
             android:src="@drawable/event4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="40dp"
             android:background="@color/white_smoke"
             android:outlineSpotShadowColor="#4F000000"
@@ -40,7 +40,7 @@
             app:cardElevation="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/zoomableImageView">
+            app:layout_constraintTop_toBottomOf="@+id/iv_eventimage">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -238,10 +238,9 @@
                         android:id="@+id/gmap_mapsevent"
                         style="@style/TextAppearance.Material3.BodyMedium"
                         android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:layout_marginHorizontal="30dp"
+                        android:layout_height="170dp"
+                        android:layout_marginHorizontal="15dp"
                         android:layout_marginTop="8dp"
-                        android:elevation="20dp"
                         app:cardCornerRadius="20dp"
                         android:shadowColor="#40000000"
                         android:shadowDx="5"
@@ -253,12 +252,16 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_eventlocation" >
 
-                        <ImageView
+                        <com.google.android.gms.maps.MapView
+                            android:id="@+id/mapView"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/eventmaps">
+                            android:layout_height="170dp"
+                            android:elevation="20dp"
+                            app:layout_constraintTop_toBottomOf="@id/gmap_mapsevent"
+                            app:layout_constraintBottom_toBottomOf="@id/gmap_mapsevent"
+                            app:layout_constraintStart_toStartOf="@id/gmap_mapsevent"
+                            app:layout_constraintEnd_toEndOf="@id/gmap_mapsevent" />
 
-                        </ImageView>
                     </androidx.cardview.widget.CardView>
 
                     <TextView
@@ -273,7 +276,7 @@
                         android:shadowDx="5"
                         android:shadowDy="5"
                         android:shadowRadius="15"
-                        android:text="More Info"
+                        android:text="Contact Person WhatsApp"
                         android:textAlignment="textStart"
                         android:textColor="@color/dark_blue_green"
                         android:textSize="19dp"
@@ -283,7 +286,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/gmap_mapsevent" />
 
                     <TextView
-                        android:id="@+id/tv_contact_person_detail"
+                        android:id="@+id/tv_contactpersondetail"
                         style="@style/TextAppearance.Material3.BodyMedium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -296,13 +299,100 @@
                         android:shadowDx="5"
                         android:shadowDy="5"
                         android:shadowRadius="20"
-                        android:text="Email   : johnysiwibu@gmail.com\nPhone   : 123-456-7890\nWebsite   : https://www.google.com/url?q=https://www.facebook.com/groups/251875943835/permalink/10162381333473836/"
+                        android:text="081212659303"
                         android:autoLink="web"
                         android:textAlignment="textStart"
                         android:textSize="18dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_contact_person" />
+
+                    <TextView
+                        android:id="@+id/tv_SponsorName"
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="20dp"
+                        android:shadowColor="#4D000000"
+                        android:shadowDx="5"
+                        android:shadowDy="5"
+                        android:shadowRadius="15"
+                        android:text="Sponsor"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/dark_blue_green"
+                        android:textSize="19dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_contactpersondetail" />
+
+                    <TextView
+                        android:id="@+id/tv_Sponsornamedetail"
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="30dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="20dp"
+                        android:elevation="20dp"
+                        android:lineSpacingExtra="4dp"
+                        android:shadowColor="#40000000"
+                        android:shadowDx="5"
+                        android:shadowDy="5"
+                        android:shadowRadius="20"
+                        android:text="Tertera di Link Post forum"
+                        android:autoLink="web"
+                        android:textAlignment="textStart"
+                        android:textSize="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_SponsorName" />
+
+                    <TextView
+                        android:id="@+id/tv_eventforumlink"
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="15dp"
+                        android:elevation="20dp"
+                        android:shadowColor="#4D000000"
+                        android:shadowDx="5"
+                        android:shadowDy="5"
+                        android:shadowRadius="15"
+                        android:text="Link Pendaftaran Event"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/dark_blue_green"
+                        android:textSize="19dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_Sponsornamedetail" />
+
+                    <TextView
+                        android:id="@+id/tv_eventforumlinkdetail"
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="30dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="20dp"
+                        android:elevation="20dp"
+                        android:lineSpacingExtra="4dp"
+                        android:shadowColor="#40000000"
+                        android:shadowDx="5"
+                        android:shadowDy="5"
+                        android:shadowRadius="20"
+                        android:text="https://m.facebook.com/groups/251875943835/permalink/10161487695983836/"
+                        android:autoLink="web"
+                        android:textStyle="italic"
+                        android:textAlignment="textStart"
+                        android:textSize="18dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_eventforumlink" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

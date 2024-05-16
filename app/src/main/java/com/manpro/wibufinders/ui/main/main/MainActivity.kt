@@ -5,12 +5,12 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.manpro.wibufinders.R
 import com.manpro.wibufinders.databinding.ActivityMainBinding
+import com.jakewharton.threetenabp.AndroidThreeTen
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,24 +20,37 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        AndroidThreeTen.init(this)
 
+        // Mendapatkan NavController dari NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+        val navController = navHostFragment.navController
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        val navView: BottomNavigationView = binding.navView
-
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home,
-                R.id.navigation_event
-            )
-        )
-
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        // Setup BottomNavigationView dengan NavController
+        val navView = binding.navView
         navView.setupWithNavController(navController)
 
-        val paddingInDp = 20
-        val paddingInPx = paddingInDp.dpToPx()
-        navView.setPadding(0, paddingInPx, 0, paddingInPx)
+        // Menambahkan listener untuk menangani item menu yang diklik
+        navView.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.navigation_home -> {
+                    // Navigasi ke tujuan "Home"
+                    navController.navigate(R.id.navigation_home)
+                    true
+                }
+
+                R.id.navigation_event -> {
+                    // Navigasi ke tujuan "Event"
+                    navController.navigate(R.id.navigation_event)
+                    true
+                }
+
+                else -> false
+            }
+        }
+        navView.itemBackgroundResource = R.drawable.bottomnav_bg
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -52,6 +65,7 @@ class MainActivity : AppCompatActivity() {
                 navController.navigate(R.id.navigation_profile)
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -61,3 +75,4 @@ class MainActivity : AppCompatActivity() {
         return (this * density).toInt()
     }
 }
+
