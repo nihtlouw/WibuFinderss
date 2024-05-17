@@ -13,7 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_event"
-        app:title="Social Wibu news"
+        app:title="Social Wibu Community"
         app:titleTextAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
         app:titleTextColor="@color/white" />
 

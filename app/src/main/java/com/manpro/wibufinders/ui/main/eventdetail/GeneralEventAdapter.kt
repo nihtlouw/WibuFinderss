@@ -16,9 +16,6 @@ import java.util.Locale
 import org.threeten.bp.format.DateTimeFormatter
 import kotlin.math.*
 
-
-
-
 class GeneralEventAdapter(var eventList: MutableList<AnimeFestEventDetail>) :
     RecyclerView.Adapter<GeneralEventAdapter.ViewHolder>() {
 

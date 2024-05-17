@@ -11,7 +11,6 @@ import com.manpro.wibufinders.R
 import com.manpro.wibufinders.databinding.ActivityMainBinding
 import com.jakewharton.threetenabp.AndroidThreeTen
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -22,9 +21,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         AndroidThreeTen.init(this)
 
+        val fragment = intent.getStringExtra("fragment")
+        if (fragment == "profile") {
+            val navController = findNavController(R.id.nav_host_fragment_activity_main)
+            navController.navigate(R.id.navigation_profile)
+        }
+
         // Mendapatkan NavController dari NavHostFragment
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
         val navController = navHostFragment.navController
 
         // Setup BottomNavigationView dengan NavController
@@ -35,22 +39,17 @@ class MainActivity : AppCompatActivity() {
         navView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_home -> {
-                    // Navigasi ke tujuan "Home"
                     navController.navigate(R.id.navigation_home)
                     true
                 }
-
                 R.id.navigation_event -> {
-                    // Navigasi ke tujuan "Event"
                     navController.navigate(R.id.navigation_event)
                     true
                 }
-
                 else -> false
             }
         }
         navView.itemBackgroundResource = R.drawable.bottomnav_bg
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -65,7 +64,6 @@ class MainActivity : AppCompatActivity() {
                 navController.navigate(R.id.navigation_profile)
                 true
             }
-
             else -> super.onOptionsItemSelected(item)
         }
     }
@@ -75,4 +73,3 @@ class MainActivity : AppCompatActivity() {
         return (this * density).toInt()
     }
 }
-

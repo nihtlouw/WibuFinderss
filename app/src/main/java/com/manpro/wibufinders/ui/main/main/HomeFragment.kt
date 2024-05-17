@@ -31,6 +31,7 @@ import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
+import com.airbnb.lottie.LottieAnimationView
 import com.manpro.wibufinders.DummyFiles.AnimeFestEventDetail
 import com.manpro.wibufinders.DummyFiles.AnimeFestList
 import com.manpro.wibufinders.R
@@ -52,7 +53,7 @@ class HomeFragment : Fragment() {
     private var currentItemIndex = 0
     private val searchHandler = Handler(Looper.getMainLooper())
     private var searchRunnable: Runnable? = null
-    private lateinit var progressBar: ProgressBar
+    private lateinit var animationView: LottieAnimationView
     private lateinit var searchView: SearchView
 
 
@@ -62,6 +63,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         if (!isLocationPermissionGranted()) {
             requestLocationPermission()
         } else {
@@ -79,6 +81,19 @@ class HomeFragment : Fragment() {
         btnFilter.setOnClickListener {
             showFilterOptions(it)
         }
+        viewModel = ViewModelProvider(this).get(GeneralEventViewModel::class.java)
+
+        animationView = view.findViewById(R.id.animationView)
+
+        viewModel.isLoading.observe(viewLifecycleOwner, Observer { isLoading ->
+            if (isLoading) {
+                animationView.visibility = View.VISIBLE
+                animationView.playAnimation()
+            } else {
+                animationView.visibility = View.GONE
+                animationView.cancelAnimation()
+            }
+        })
     }
 
 
@@ -87,35 +102,12 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
-
-        progressBar = view.findViewById(R.id.progressBar)
+        animationView = view.findViewById(R.id.animationView)
         searchView = view.findViewById(R.id.search_view)
 
         viewModel = ViewModelProvider(this).get(GeneralEventViewModel::class.java)
 
-        val searchView = view.findViewById<SearchView>(R.id.search_view)
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String): Boolean {
-                // Panggil performSearch hanya saat pengguna menekan enter pada keyboard
-                performSearch(query)
-
-                // Sembunyikan keyboard
-                hideKeyboard()
-                return true
-            }
-
-            override fun onQueryTextChange(newText: String): Boolean {
-                // Jika teks berubah menjadi kosong, kembalikan data item list ke data default
-                if (newText.isEmpty()) {
-                    restoreDefaultItemList()
-                } else {
-                    // Jika teks tidak kosong, panggil performSearch untuk mencari item yang sesuai
-                    performSearch(newText)
-                }
-                return true
-            }
-        })
-
+        setupSearchView()
 
         // Inisialisasi RecyclerView untuk event umum
         recyclerViewGeneral = view.findViewById(R.id.rv_generalevent)
@@ -127,10 +119,7 @@ class HomeFragment : Fragment() {
         viewModel.eventList.observe(viewLifecycleOwner, Observer { eventList ->
             // Memanggil prepareEventList() untuk menyesuaikan urutan acara
             adapterGeneral.setData(eventList)
-            progressBar.visibility = View.GONE
-
-
-            // Memperbarui tampilan adapter setelah data diperbarui
+            animationView.visibility = View.GONE // Sembunyikan animationView saat data sudah diperbarui
             adapterGeneral.notifyDataSetChanged()
         })
 
@@ -179,6 +168,25 @@ class HomeFragment : Fragment() {
         return view
     }
 
+    private fun setupSearchView() {
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                performSearch(query)
+                hideKeyboard()
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                if (newText.isEmpty()) {
+                    restoreDefaultItemList()
+                } else {
+                    performSearch(newText)
+                }
+                return true
+            }
+        })
+    }
+
     private fun loadDataFromViewModel() {
         // Ambil data dari ViewModel dan perbarui adapter
         viewModel.eventList.observe(viewLifecycleOwner, Observer { eventList ->
@@ -211,8 +219,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun performSearch(query: String) {
-        // Tampilkan ProgressBar
-        progressBar.visibility = View.VISIBLE
+        // Tampilkan animasi loading
+        animationView.visibility = View.VISIBLE
+        animationView.playAnimation()
 
         // Batalkan pencarian sebelumnya jika ada
         searchRunnable?.let { runnable ->
@@ -225,13 +234,15 @@ class HomeFragment : Fragment() {
             Log.d("HomeFragment", "Search Results: $searchResults") // Cek hasil pencarian
             viewModel.setSearchResults(searchResults)
 
-            // Sembunyikan ProgressBar setelah pencarian selesai
-            progressBar.visibility = View.GONE
+            // Sembunyikan animasi loading setelah pencarian selesai
+            animationView.visibility = View.GONE
+            animationView.cancelAnimation()
         }
 
         // Jalankan pencarian setelah delay 2 detik
-        searchHandler.postDelayed(searchRunnable!!, 1000)
+        searchHandler.postDelayed(searchRunnable!!, 2000)
     }
+
 
 
     private fun searchData(query: String): List<AnimeFestEventDetail> {
@@ -323,26 +334,43 @@ class HomeFragment : Fragment() {
 
     private fun filterByDate() {
         val currentDate = LocalDate.now()
-        adapterGeneral.filterEventsByDate(currentDate)
-        adapterGeneral.setData(adapterGeneral.eventList)
-        viewModel.filterEventsByDate(currentDate)
-
+        // Menampilkan animasi loading
+        animationView.visibility = View.VISIBLE
+        animationView.playAnimation()
+        // Menggunakan Handler untuk menunda proses filtering selama 2 detik
+        Handler(Looper.getMainLooper()).postDelayed({
+            // Kembalikan daftar event ke daftar semula
+            restoreDefaultItemList()
+            adapterGeneral.filterEventsByDate(currentDate)
+            viewModel.filterEventsByDate(currentDate)
+            // Menyembunyikan animasi loading setelah proses filtering selesai
+            animationView.visibility = View.GONE
+            animationView.cancelAnimation()
+        }, 2000)
     }
 
     private fun filterByLocation() {
         getUserLocation { userLocation ->
             if (userLocation != null) {
-                adapterGeneral.filterEventsByLocation(userLocation)
-                adapterGeneral.setData(adapterGeneral.eventList)
-                viewModel.filterEventsByLocation(userLocation)
-
+                // Menampilkan animasi loading
+                animationView.visibility = View.VISIBLE
+                animationView.playAnimation()
+                // Menggunakan Handler untuk menunda proses filtering selama 2 detik
+                Handler(Looper.getMainLooper()).postDelayed({
+                    // Kembalikan daftar event ke daftar semula
+                    restoreDefaultItemList()
+                    adapterGeneral.filterEventsByLocation(userLocation)
+                    viewModel.filterEventsByLocation(userLocation)
+                    // Menyembunyikan animasi loading setelah proses filtering selesai
+                    animationView.visibility = View.GONE
+                    animationView.cancelAnimation()
+                }, 2000)
             } else {
-                requestLocationPermission()
+                // Tampilkan pesan kepada pengguna bahwa lokasi tidak tersedia
+                Toast.makeText(requireContext(), "Lokasi pengguna tidak tersedia", Toast.LENGTH_SHORT).show()
             }
         }
     }
-
-
 
     private fun getUserLocation(callback: (Location?) -> Unit) {
         val locationManager = requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager

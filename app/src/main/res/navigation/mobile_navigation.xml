@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.manpro.wibufinders.ui.main.eventdetail.SocialEventFragment"
+        android:name="com.manpro.wibufinders.ui.main.main.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 

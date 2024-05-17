@@ -19,6 +19,26 @@
         app:titleTextAppearance="@style/TextAppearance.AppCompat.Title.Inverse"
         app:titleTextColor="@color/white" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="50dp"
+        android:visibility="gone"
+        app:lottie_rawRes="@raw/loading"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.5"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp" />
+
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="fill_parent"
@@ -53,49 +73,52 @@
                     android:layout_marginTop="15dp"
                     android:orientation="vertical">
 
-                    <RelativeLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/crd"
-                            android:layout_width="270dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_marginVertical="5dp"
+                            android:layout_marginEnd="5dp"
                             android:elevation="4dp"
                             android:padding="8dp"
-                            app:cardCornerRadius="20dp">
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintEnd_toStartOf="@+id/btnFilter"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent">
 
-                        <androidx.appcompat.widget.SearchView
-                            android:id="@+id/search_view"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:elevation="50dp"
-                            android:focusable="true"
-                            android:background="@color/white"
-                            android:focusableInTouchMode="true"
-                            android:iconifiedByDefault="false"
-                            app:queryHint="Search Event here..."
-                            android:layout_toStartOf="@id/btnFilter" />
+                            <androidx.appcompat.widget.SearchView
+                                android:id="@+id/search_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:elevation="50dp"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:iconifiedByDefault="false"
+                                app:queryHint="Search Event here..." />
                         </androidx.cardview.widget.CardView>
-
 
                         <androidx.appcompat.widget.AppCompatImageButton
                             android:id="@+id/btnFilter"
-                            android:layout_width="70dp"
-                            android:layout_height="50dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginVertical="6dp"
-                            android:layout_marginStart="23dp"
-                            android:layout_toEndOf="@+id/crd"
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:layout_marginVertical="5dp"
+                            android:layout_marginStart="3dp"
                             android:background="?attr/selectableItemBackgroundBorderless"
                             android:contentDescription="Filter Menu"
                             android:scaleType="fitCenter"
                             android:src="@drawable/baseline_toc_24"
-                            android:text="Filter" />
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/crd"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" />
 
-                    </RelativeLayout>
-
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
                         android:id="@+id/textView"
@@ -103,7 +126,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
-                        android:text="Popular Events "
+                        android:text="Popular Events"
                         android:textColor="@color/burnham"
                         android:textFontWeight="900"
                         android:textSize="30sp" />
@@ -122,7 +145,6 @@
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             tools:listitem="@layout/popular_event_listitem" />
                     </androidx.cardview.widget.CardView>
-
 
                 </LinearLayout>
 
@@ -159,7 +181,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:paddingHorizontal="16dp"
-                    android:text="Lets go Weabo"
+                    android:text="Lets go WeaboO"
                     android:textFontWeight="900"
                     android:textSize="30sp" />
 
@@ -181,19 +203,10 @@
                         tools:listitem="@layout/general_event_listitem" />
 
                 </androidx.cardview.widget.CardView>
-
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:elevation="50dp"
-                    android:visibility="gone" />
             </LinearLayout>
-
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

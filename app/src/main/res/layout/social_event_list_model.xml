@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/rounded_itemlist_event"
+    android:background="@drawable/white_gradient"
     android:outlineSpotShadowColor="@color/black"
     android:layout_margin="8dp">
 
@@ -19,7 +19,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="210dp"
-            android:background="@drawable/rounded_itemlist_event">
+            android:background="@drawable/white_gradient">
 
             <ImageView
                 android:id="@+id/iv_socialimage"

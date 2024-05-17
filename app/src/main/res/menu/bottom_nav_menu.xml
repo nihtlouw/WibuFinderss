@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/home_ic"
-        android:title="Home" />
+        android:title="Home"
+        app:itemTextColor="@color/white"/>
 
     <item
         android:id="@+id/navigation_event"
         android:icon="@drawable/event_ic"
-        android:title="Social News"/>
+        android:title="Social News"
+        app:itemTextColor="@color/white"/>
 
 </menu>

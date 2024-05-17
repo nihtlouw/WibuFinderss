@@ -13,5 +13,7 @@
     <color name="shimmer">#808080</color>
     <color name="golden">#F4931E</color>
     <color name="blackpanther">#1E2328</color>
+    <color name="bottom_nav_item_color">#045346</color>
+
 
 </resources>

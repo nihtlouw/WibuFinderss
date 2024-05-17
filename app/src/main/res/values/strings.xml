@@ -9,14 +9,14 @@
     <string name="or">Or</string>
     <string name="register">Register</string>
     <string name="need_an_account">Need an account?</string>
-    <string name="email">Email</string>
+    <string name="email">Username</string>
     <string name="Email_user">User12345678@gmail.com</string>
     <string name="change_them">Change Theme Dark/White</string>
     <string name="change_lang">Change language</string>
     <string name="favorite">Favorite</string>
     <string name="log_out">Log out</string>
-    <string name="username">Username</string>
-    <string name="username_hint">User Wibu?</string>
+    <string name="username">Email</string>
+    <string name="username_hint">Input your Username</string>
     <string name="password_register_hint">Input your password</string>
     <string name="password_again_register_hint">Input your password again</string>
     <string name="back">Back</string>

@@ -42,6 +42,11 @@ class RegisterActivity : AppCompatActivity() {
             val password = binding.etPassword.text.toString().trim()
             val repassword = binding.etRePassword.text.toString().trim()
 
+            // Validasi password matching
+            if (password != repassword) {
+                Toast.makeText(this@RegisterActivity, "Password is not matching", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             // Menjalankan proses pendaftaran pengguna
             registerUser(username,email,password,repassword)
@@ -55,7 +60,7 @@ class RegisterActivity : AppCompatActivity() {
         repassword: String
     ) {
         // Validasi input pengguna
-        if (username.isEmpty() || password.isEmpty()) {
+        if (username.isEmpty() || password.isEmpty() || repassword.isEmpty()) {
             Toast.makeText(this@RegisterActivity, "Please fill in all fields", Toast.LENGTH_SHORT).show()
             return
         }
@@ -63,8 +68,6 @@ class RegisterActivity : AppCompatActivity() {
         // Membuat pengguna baru di Firebase Authentication
         auth.createUserWithEmailAndPassword(username, password)
             .addOnCompleteListener { task ->
-
-
                 if (task.isSuccessful) {
                     // Jika pendaftaran berhasil
                     val id = auth.currentUser?.uid ?: ""
