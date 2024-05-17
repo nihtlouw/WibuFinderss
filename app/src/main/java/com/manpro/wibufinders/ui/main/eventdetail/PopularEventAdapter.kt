@@ -73,4 +73,9 @@ class PopularEventAdapter(private var eventList: List<AnimeFestEventDetail>) :
         eventList = originalEventList.toList()
         notifyDataSetChanged()
     }
+    // Method to set event list with only big events (bigevent = 1)
+    fun setBigEvents(events: List<AnimeFestEventDetail>) {
+        eventList = events.filter { it.bigevent == 1 }
+        notifyDataSetChanged()
+    }
 }

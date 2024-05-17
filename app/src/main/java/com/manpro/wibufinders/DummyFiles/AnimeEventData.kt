@@ -24,7 +24,8 @@ data class AnimeFestEventDetail(
     val longitude: Double,
     val sponsorName: String,
     val contactPersonWhatsApp: String,
-    val eventForumLink: String
+    val eventForumLink: String,
+    val bigevent: Int
 
 ) : Parcelable
 
@@ -43,7 +44,8 @@ val AnimeFestList = AnimeFest(
             longitude = 106.82418882550553,
             sponsorName = "Hoyoverse",
             contactPersonWhatsApp = "+6281234567890",
-            eventForumLink = "https://www.hoyolab.com/article/26203424"
+            eventForumLink = "https://www.hoyolab.com/article/26203424",
+            bigevent = 1
         ),
         AnimeFestEventDetail(
             id = 2,
@@ -56,7 +58,8 @@ val AnimeFestList = AnimeFest(
             longitude = 106.96672505221647,
             sponsorName = "RAF Creative",
             contactPersonWhatsApp = "+6281234567890",
-            eventForumLink = "https://www.facebook.com/groups/251875943835/permalink/10162451176183836/"
+            eventForumLink = "https://www.facebook.com/groups/251875943835/permalink/10162451176183836/",
+            bigevent = 0
         ),
         AnimeFestEventDetail(
             id = 3,
@@ -69,7 +72,8 @@ val AnimeFestList = AnimeFest(
             longitude = 106.84518116756163,
             sponsorName = "KOI EXPO",
             contactPersonWhatsApp = "+6283895216748",
-            eventForumLink = "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fp%2FC55FmRTBkMH%2F%3Figsh%3DaW1mOXJ1Y2QwcmRu&h=AT3DvtRXmyn2KryxECebNRdOFhwJtCuhPKlCTeRUUq6xsSd9ivWiZjMP-wB4bFq6Xt0HPTyXybgP9c5tO4avI8wACfh8EeY-nVhhJeO94tcQhkkT-3NMmxm59_SyXlN6laFJFvLueR1NkPY4T1xr&__tn__=-UK-R&c[0]=AT17HpO8c1ofk2_shMM1xRIrkTD493doMJ3lzRKlYN_mg4V9ZONf5sZ_VY2z6B-4mCZqbGxYVAJhz0JVT2rZPOD3KJrZdp7wlynXQpBbUyqz-hwSIK42k1BKH-JlrSCm_e3kGggRsDaIDVV9vlQXVBD_yVJEcDBoZzvoMYWxO_9ydXiZYLLCSfWn6RoDSeG7iPwGOJ4euMY32OM-AFqTp1P1-5AJpKRi2FiWHUMPxijWL-s"
+            eventForumLink = "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fp%2FC55FmRTBkMH%2F%3Figsh%3DaW1mOXJ1Y2QwcmRu&h=AT3DvtRXmyn2KryxECebNRdOFhwJtCuhPKlCTeRUUq6xsSd9ivWiZjMP-wB4bFq6Xt0HPTyXybgP9c5tO4avI8wACfh8EeY-nVhhJeO94tcQhkkT-3NMmxm59_SyXlN6laFJFvLueR1NkPY4T1xr&__tn__=-UK-R&c[0]=AT17HpO8c1ofk2_shMM1xRIrkTD493doMJ3lzRKlYN_mg4V9ZONf5sZ_VY2z6B-4mCZqbGxYVAJhz0JVT2rZPOD3KJrZdp7wlynXQpBbUyqz-hwSIK42k1BKH-JlrSCm_e3kGggRsDaIDVV9vlQXVBD_yVJEcDBoZzvoMYWxO_9ydXiZYLLCSfWn6RoDSeG7iPwGOJ4euMY32OM-AFqTp1P1-5AJpKRi2FiWHUMPxijWL-s",
+            bigevent = 1
         ),
         AnimeFestEventDetail(
             id = 4,
@@ -82,7 +86,8 @@ val AnimeFestList = AnimeFest(
             longitude = 106.7962050540692,
             sponsorName = "REJPOP",
             contactPersonWhatsApp = "+6285814133311",
-            eventForumLink = "https://www.facebook.com/groups/251875943835/permalink/10162433012953836/"
+            eventForumLink = "https://www.facebook.com/groups/251875943835/permalink/10162433012953836/",
+            bigevent = 0
         ),
         AnimeFestEventDetail(
             id = 5,
@@ -95,7 +100,8 @@ val AnimeFestList = AnimeFest(
             longitude = 107.01677486940744,
             sponsorName = "RAF Creative",
             contactPersonWhatsApp = "+6281234567890",
-            eventForumLink = "https://www.facebook.com/groups/251875943835/permalink/10162451278018836/"
+            eventForumLink = "https://www.facebook.com/groups/251875943835/permalink/10162451278018836/",
+            bigevent = 0
         ),
         AnimeFestEventDetail(
             id = 6,
@@ -108,7 +114,8 @@ val AnimeFestList = AnimeFest(
             longitude = 107.60438188105952,
             sponsorName = "HIMADE SEKOLAH TINGGI BAHASA ASING YAPARI",
             contactPersonWhatsApp = "+6282118701432",
-            eventForumLink = "https://www.facebook.com/groups/251875943835/permalink/10162281324023836/"
+            eventForumLink = "https://www.facebook.com/groups/251875943835/permalink/10162281324023836/",
+            bigevent = 0
         ),
         AnimeFestEventDetail(
             id = 7,
@@ -121,7 +128,8 @@ val AnimeFestList = AnimeFest(
             longitude = 106.83162694724972,
             sponsorName = "Zygma Organizer",
             contactPersonWhatsApp = "+6281234567890",
-            eventForumLink = "https://www.facebook.com/groups/251875943835/permalink/10162280397208836/"
+            eventForumLink = "https://www.facebook.com/groups/251875943835/permalink/10162280397208836/",
+            bigevent = 0
         ),
         AnimeFestEventDetail(
             id = 8,
@@ -134,7 +142,8 @@ val AnimeFestList = AnimeFest(
             longitude = 106.96278632522912,
             sponsorName = "SMP Global Mandiri Jakarta",
             contactPersonWhatsApp = "+6281234567890",
-            eventForumLink = "https://www.facebook.com/groups/251875943835/permalink/10162406921623836/"
+            eventForumLink = "https://www.facebook.com/groups/251875943835/permalink/10162406921623836/",
+            bigevent = 0
         ),
         AnimeFestEventDetail(
             id = 9,
@@ -147,7 +156,8 @@ val AnimeFestList = AnimeFest(
             longitude = 112.74529333873485,
             sponsorName = "INDIST",
             contactPersonWhatsApp = "+6281234567890",
-            eventForumLink = "https://www.indist2024.com"
+            eventForumLink = "https://www.indist2024.com",
+            bigevent = 0
         ),
         AnimeFestEventDetail(
             id = 10,
@@ -160,7 +170,22 @@ val AnimeFestList = AnimeFest(
             longitude = 106.80721622522951,
             sponsorName = "Anime Festival Asia",
             contactPersonWhatsApp = "+6281234567890",
-            eventForumLink = "https://www.facebook.com/groups/251875943835/permalink/10162220884583836/"
+            eventForumLink = "https://www.facebook.com/groups/251875943835/permalink/10162220884583836/",
+            bigevent = 1
+        ),
+        AnimeFestEventDetail(
+            id = 11,
+            eventName = "Waku-Waku Festival Vol.3 Indonesia",
+            description = "\"Lokasi : Smesco Exhibition Convention Hall\" AFAID24 AFAKembali Hello again, Indonesia! We are finally back! (Tunggu update info selanjutnya) 📅: 3-5 Mei 2024 📍: Jakarta Convention Center Link postingan: https://www.instagram.com/reel/C0D8DQVrVnm/?igshid=MzRlODBiNWFlZA== https://fb.watch/oxHB_P2KYS/?mibextid=Nif5oz Social media: https://www.facebook.com/animefestivalasia https://instagram.com/animefestivalasia",
+            eventDate = LocalDate.of(2024, 6, 26),
+            location = "Jakarta Pusat",
+            imageUrl = "https://d3hzxw6fwm263k.cloudfront.net/uploads/events/photos/1715596690-CP76lULoXqFJBS8iXWulLAet2YeExphG.png?width=1024&quality=90",
+            latitude = -6.240705,
+            longitude = 106.833420,
+            sponsorName = "Waku Waku Festival",
+            contactPersonWhatsApp = "+6281110588333",
+            eventForumLink = "https://www.goersapp.com/events/waku-waku-festival-vol-3--wakuwakuvol3",
+            bigevent = 1
         )
     )
 )

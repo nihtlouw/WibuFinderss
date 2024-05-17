@@ -2,12 +2,14 @@ package com.manpro.wibufinders.ui.main.main
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
 import com.manpro.wibufinders.R
+import com.manpro.wibufinders.databinding.FragmentPopupConfirmlogoutBinding
 import com.manpro.wibufinders.ui.main.login.LoginActivity
 
 class ProfileFragment : Fragment() {
@@ -17,33 +19,37 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        val logoutButton: Button = view.findViewById(R.id.btn_logout)
+        logoutButton.setOnClickListener {
+            showLogoutConfirmationDialog()
+        }
+
+        return view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    private fun showLogoutConfirmationDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        val binding = FragmentPopupConfirmlogoutBinding.inflate(LayoutInflater.from(context))
 
-        // Lakukan inisialisasi dan pengaturan fungsi-fungsi yang seharusnya ada di sini
-        // Misalnya, atur onClickListener untuk tombol-tombolnya
-        val btnFavorite: Button = view.findViewById(R.id.btn_favorite)
-        val btnLogout: Button = view.findViewById(R.id.btn_logout)
+        builder.setView(binding.root)
 
-        btnFavorite.setOnClickListener {
-            // Tambahkan logika untuk tombol favorite di sini
-        }
+        val dialog = builder.create()
 
-        btnLogout.setOnClickListener {
-            // Membuat intent untuk memulai LoginActivity
+        binding.buttonYeslogout.setOnClickListener {
+            // Tambahkan aksi logout di sini
+            dialog.dismiss()
+            // Arahkan ke LoginActivity
             val intent = Intent(activity, LoginActivity::class.java)
-
-            // Menghapus semua aktivitas sebelumnya dari tumpukan aktivitas sehingga pengguna tidak dapat kembali ke layar profil setelah logout
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-
-            // Memulai LoginActivity
             startActivity(intent)
-
-            // Mengakhiri sesi pengguna atau melakukan tindakan logout lainnya di sini
         }
 
+        binding.buttonNologout.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 }

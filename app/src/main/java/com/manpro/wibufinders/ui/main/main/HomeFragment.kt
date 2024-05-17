@@ -13,6 +13,7 @@ import android.os.Looper
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
@@ -26,12 +27,14 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
 import com.airbnb.lottie.LottieAnimationView
+import com.google.android.material.appbar.MaterialToolbar
 import com.manpro.wibufinders.DummyFiles.AnimeFestEventDetail
 import com.manpro.wibufinders.DummyFiles.AnimeFestList
 import com.manpro.wibufinders.R
@@ -63,6 +66,19 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val toolbar: MaterialToolbar = view.findViewById(R.id.top_navigation)
+
+        // Menambahkan listener untuk item menu yang diklik
+        toolbar.setOnMenuItemClickListener { item: MenuItem ->
+            when (item.itemId) {
+                R.id.menu_account -> {
+                    // Navigasi ke ProfileFragment menggunakan NavController
+                    findNavController().navigate(R.id.navigation_profile)
+                    true
+                }
+                else -> false
+            }
+        }
 
         if (!isLocationPermissionGranted()) {
             requestLocationPermission()
@@ -146,6 +162,13 @@ class HomeFragment : Fragment() {
         adapterPopular = PopularEventAdapter(events)
         recyclerViewPopular.adapter = adapterPopular
         recyclerViewPopular.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+        viewModel.eventList.observe(viewLifecycleOwner, Observer { eventList ->
+            // Filter eventList untuk hanya memuat big events (bigevent = 1)
+            val bigEvents = eventList.filter { it.bigevent == 1 }
+            // Setel data ke adapterPopular
+            adapterPopular.setBigEvents(bigEvents)
+        })
 
         // Attach PagerSnapHelper setelah recyclerViewPopular diinisialisasi
         val snapHelper: SnapHelper = PagerSnapHelper()
