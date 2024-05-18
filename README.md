@@ -1,1 +1,1 @@
-Aplikasi Event Anime Cosplayer & Wibu Jejepangan (WIBU FINDERS)
+Aplikasi Event Anime Cosplayer & Wibu Jejepangan (Wibu Finders)
