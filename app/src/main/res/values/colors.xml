@@ -3,7 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="soft_peach">#F4EEEE</color>
-    <color name="brandy">#1BBC9B</color>
+    <color name="brandy">#17C6A2</color>
     <color name="geyser">#D2E0DB</color>
     <color name="dark_blue_green">#045346</color>
     <color name="burnham">#012F2C</color>
@@ -12,4 +12,8 @@
     <color name="grey">#D2E0DB</color>
     <color name="shimmer">#808080</color>
     <color name="golden">#F4931E</color>
+    <color name="blackpanther">#1E2328</color>
+    <color name="bottom_nav_item_color">#045346</color>
+
+
 </resources>

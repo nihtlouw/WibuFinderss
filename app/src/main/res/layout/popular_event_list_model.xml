@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.circularreveal.cardview.CircularRevealCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/carousel_item_container1"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:layout_columnWeight="1"
+    android:layout_margin="4dp"
+    android:elevation="50dp"
+    app:cardCornerRadius="20dp"
+    android:background="#00000000"
+    android:foreground="#00000000"
+    app:shapeAppearance="?attr/shapeAppearanceCornerExtraLarge">
+
+    <ImageView
+        android:id="@+id/iv_eventpops"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/iv_hsr">
+
+    </ImageView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/coverwhite"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/cover"
+            android:rotation="180" />
+
+        <TextView
+            android:id="@+id/tv_date_eventpopular"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="130dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:elevation="10dp"
+            android:text=" 25 March , Thursday "
+            android:textColor="#03C5B8"
+            android:textSize="11dp"
+            android:textStyle="italic"
+            tools:ignore="TextSizeCheck">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_hstg"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:elevation="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/burnham"
+            android:text="#"
+            android:layout_marginVertical="142dp"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_marginHorizontal="20dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_title_eventpopular"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:elevation="10dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/burnham"
+            android:text="Star Rail Hoyolab Asia Festival 2024 "
+            android:layout_marginVertical="142dp"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_marginHorizontal="20dp">
+
+        </TextView>
+
+
+
+    </RelativeLayout>
+</com.google.android.material.circularreveal.cardview.CircularRevealCardView>

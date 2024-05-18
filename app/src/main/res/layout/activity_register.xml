@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-11dp"
                 android:drawableEnd="@drawable/person_black_ic"
-                android:hint="@string/username_hint"
+                android:hint="@string/email_hint"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
                 android:textCursorDrawable="@color/dark_blue_green"
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-11dp"
                 android:drawableEnd="@drawable/mail_ic"
-                android:hint="@string/email_hint"
+                android:hint="@string/username_hint"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
                 android:textCursorDrawable="@color/dark_blue_green"
@@ -191,6 +191,7 @@
         android:text="@string/back"
         android:textColor="@color/soft_peach"
         android:textFontWeight="900"
+        android:backgroundTint="@color/dark_blue_green"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/btn_confirm"
         app:layout_constraintStart_toEndOf="@+id/view3"
@@ -208,9 +209,11 @@
         android:text="@string/confirm"
         android:textColor="@color/soft_peach"
         android:textFontWeight="900"
+        android:backgroundTint="@color/golden"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/view3"
         app:layout_constraintStart_toEndOf="@+id/btn_back"
         app:layout_constraintTop_toTopOf="@+id/view3" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

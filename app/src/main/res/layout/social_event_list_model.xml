@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/white_gradient"
+    android:outlineSpotShadowColor="@color/black"
+    android:layout_margin="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#1E000000"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="12dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:background="@drawable/white_gradient">
+
+            <ImageView
+                android:id="@+id/iv_socialimage"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/iv_hsr"
+                android:contentDescription="@string/event_image_description"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/tv_socialmedia"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_socialimage"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:shadowColor="#80000000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:maxLines="1"
+                android:text="Facebook"
+                android:shadowRadius="5"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:background="@color/brandy"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/iv_arrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignTop="@+id/tv_socialmedia"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="300dp"
+                android:layout_marginTop="10dp"
+                android:elevation="50dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/baseline_arrow_outward_24" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
